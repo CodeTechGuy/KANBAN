@@ -7,7 +7,6 @@
 html, body {
     height: 100%;
     width: 100%;
-
 }
 
 html{
@@ -17,7 +16,9 @@ html{
 :root {
     --bg-color: #000000;
     --bg-button-color: #1a1a1a;
+    --bg-task-color: #2a2a2a;
     --primary-text-color: #f4f4f4;
+    --delete-color: #ff4d4d;
 
     /* ----padding variables---- */
 
@@ -42,6 +43,12 @@ body {
     color: var(--primary-text-color);
 }
 
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
     padding: var(--nav-padding);
     display: flex;
@@ -57,4 +64,49 @@ nav button{
     padding: var(--padding-m) var(--padding-l);
     cursor: pointer;
     border-radius: var(--border-radius-m);
+}
+
+section{
+    padding: var(--section-padding);
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: var(--padding-xxl);
+}
+
+section .task-column{
+    background-color: var(--bg-button-color);
+    flex-grow: 1;
+    padding: var(--padding-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--border-radius-m);
+    border-radius: var(--border-radius-m);
+}
+
+section .task-column .heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .task-column .task {
+    background-color: var(--bg-task-color);
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+}
+
+section .task-column .task button{
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--padding-s) var(--padding-m);
+    border-radius: var(--border-radius-s);
+    border: none;
+    outline: none;
+    background-color: var(--delete-color);
+    color: var(--primary-text-color);
 }
